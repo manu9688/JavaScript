@@ -76,7 +76,7 @@ const nombreCompleto = (nombre) =>{
 return nombre;
 };
 console.log(nombreCompleto("Manuela Cardona A"));
-
+//llamada a la funcion para que se ejecute
 document.getElementById("print").textContent =nombreCompleto("Manuela Cardona Arias");
 
 /* 2. Crea una función con nombre y sin return. Pásale un tipo de 
@@ -93,12 +93,22 @@ function point2(dato){
 const ejBoolean = (dato) => {
   document.getElementById("print2").textContent = `Esto es lo que recibi= ${dato}`;
 };
+
+//llamada a la funcion para que se ejecute
 ejBoolean(true);
 
 /*3. Crea una función que reciba parámetros infinitos, haz la llamada
 con los valores 1, 2, 3, 4, 5 y muestra dichos valores mediante un
 forEach.*/ 
 
-function usandoForEach(){
-
+const pInfinitos = function (...datos){
+    let resultado = "Foreach = ";
+    datos.forEach(element => {
+   console.log(element);
+   resultado += `${element} `;
+    });
+     document.getElementById("foreach").textContent = resultado.trim();
 }
+//llamada a la funcion para que se ejecute
+pInfinitos('1','2','3','4','5');
+
