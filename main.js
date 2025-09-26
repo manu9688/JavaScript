@@ -58,3 +58,47 @@ function ejemplo(){
 }
 ejemplo();
 console.log(vglobal);
+
+//!Ejercicio 2
+/* 1. Crea una función arrow function que retorne tu nombre y 
+tus apellidos e imprímelos por pantalla desde fuera de la función.*/
+
+/*
+function fArrow(){
+    const name= 'Manuela';
+    const lastname='Cardona Arias';
+    return `${name} ${lastname}`;
+}
+    console.log(fArrow());
+    */
+
+const nombreCompleto = (nombre) =>{
+return nombre;
+};
+console.log(nombreCompleto("Manuela Cardona A"));
+
+document.getElementById("print").textContent =nombreCompleto("Manuela Cardona Arias");
+
+/* 2. Crea una función con nombre y sin return. Pásale un tipo de 
+dato boolean y dentro de la función imprime el valor que hemos 
+pasado por los parámetros.*/
+
+/*
+function point2(dato){
+    console.log("esto es lo que recibi = " +dato);
+    document.getElementById("print2").textContent = `Esto es lo que recibi = ${dato}`;
+}
+    point2(true);
+*/
+const ejBoolean = (dato) => {
+  document.getElementById("print2").textContent = `Esto es lo que recibi= ${dato}`;
+};
+ejBoolean(true);
+
+/*3. Crea una función que reciba parámetros infinitos, haz la llamada
+con los valores 1, 2, 3, 4, 5 y muestra dichos valores mediante un
+forEach.*/ 
+
+function usandoForEach(){
+
+}
