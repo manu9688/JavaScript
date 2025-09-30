@@ -189,3 +189,34 @@ for (let i = 0; i < cartas.length; i++) {
 }
 
 console.log(result);
+//+++++++++++Ejercicios con Condicionales IF++++++++++++++
+/* 1- A partir de la siguiente instrucción que genera un número aleatorio:
+console.log(Math.round(Math.random()));
+que genera un número aleatorio 0 o 1.
+Haz una función con return, invócala y muestra por consola "cara" 
+si el valor es 1 y "cruz" si el valor es 0.
+ */
+
+
+
+
+
+/*
+EJERCICIOS
+- Crea una función, pasa 3 números por parámetros, súmalos y devuelve el resultado mediante return.
+ Finalmente muéstralos por pantalla.
+- Crea una función y escribe tu nombre completo en 3 parámetros: nombre, apellido1, apellido2, 
+concaténalos y finalmente muéstralos por pantalla.
+- Crea una función que acepte dos números y devuelva el número mayor.
+
+*/ 
+
+
+
+/* Ejercicios Switch
+EJERCICIO
+1. 	Realiza un  que muestre el mes del año cuando lo introduzcamos en formato numérico (1 al 12).
+2. 	Realiza un  en el que puedas introducir un número del uno al cinco en un string y 
+lo transforme a un número.
+
+*/
