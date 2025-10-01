@@ -261,7 +261,7 @@ const numbers = [1, 100000, 21, 30, 4];
 
 // Function to perform Bubble Sort
 function bubbleSort(arr) {
-	const n = arr.length;
+	const n = arr.length;//guarda la longitud del array
 
 	// Iterate through each element
 	for (let i = 0; i < n - 1; i++) {
@@ -283,8 +283,8 @@ console.log(bubbleSort(numbers));
 
 //? Utilizando Sort 
 const numbers1 = [1, 100000, 21, 30, 4];
-console.log(numbers1.sort()); // ❌ Wrong orderned ❌
-const sortedNumbers = numbers1.sort((a, b) => a - b); // Ascending numerical sorting
+console.log(numbers1.sort()); // ❌ Wrong orderned ❌ //ordena pero como si fueran String no como numeros solo toma el primer numero y lo comprara
+const sortedNumbers = numbers1.sort((a, b) => a - b); // Ascending numerical sorting// aqui le estoy diciendo al metodo sort lo que tiene que hacer , compara los numeros si son negativos o positivos para ordenarlos
 console.log(sortedNumbers);
 
 /* 10 🗣️ ORDENANDO LOS TICKETS: 🗣️
@@ -311,3 +311,176 @@ console.log('Este ticket solo tiene cafes: '+ticket011Result);
 const ticket022Result = ticket022.every((element) => element === '☕');
 console.log('Este ticket solo tiene cafes: '+ticket022Result);
 // Output: false (because not every element is '☕')
+
+
+/*
+**TAREA 2**
+
+Resulta que hablar con el cliente el ticket es el ticket02.
+ Los clientes van a pagar de forma separada. Así, que necesitamos 
+ cortar el ticket entre 3 personas. 
+La primera ha consumido un ☕ y un 🥐
+La segunda ha consumido un 🍵 , un 🥖 
+La tercera ha consumido un 🍹 y un 🥪
+Además de esto, queremos ir quitando las cosas del ticket general 
+de tal forma que podamos asegurar que en el ticket final los clientes
+ no nos han dejado nada sin pagar.
+*/
+
+//? Usando Splice (modifica, elimina)
+
+const ticket021 = ['🍹', '🥖', '☕', '🥯', '🍵', '🥐', '🥪'];
+
+// Consumption of each person
+const person1Consumption = ['☕', '🥐'];
+const person2Consumption = ['🍵', '🥖', '🥯'];
+const person3Consumption = ['🍹', '🥪'];
+
+// Function to create individual tickets using splice
+const createIndividualTicket = (ticket021, consumption) => {
+  const individualTicket = [];// nuevo array
+  for (const item of consumption) {
+    const index = ticket021.indexOf(item); // compara el emoji del ticket original con la aconsumision
+    if (index !== -1) {
+      individualTicket.push(ticket021.splice(index, 1)[0]);
+    }
+  }
+  return individualTicket;
+};
+
+// Create individual tickets
+const person1Ticket = createIndividualTicket(ticket021, person1Consumption);
+const person2Ticket = createIndividualTicket(ticket021, person2Consumption);
+const person3Ticket = createIndividualTicket(ticket021, person3Consumption);
+
+console.log('Person 1 Ticket:', person1Ticket);
+console.log('Person 2 Ticket:', person2Ticket);
+console.log('Person 3 Ticket:', person3Ticket);
+console.log('Remaining items in the original ticket:', ticket021);
+
+
+//? usando slice (COPIA sin modificar el original)
+const ticket0222 = ['🍹', '🥖', '☕', '🥯', '🍵', '🥐', '🥪'];
+
+// Consumption of each person
+const person11Consumption = ['☕', '🥐'];
+const person22Consumption = ['🍵', '🥖', '🥯'];
+const person33Consumption = ['🍹', '🥪'];
+
+// Function to create individual tickets using slice
+const createIndividualTicket1 = (ticket0222, consumption) => {
+  const individualTicket = [];
+  for (const item of consumption) {
+    const index = ticket0222.indexOf(item);
+    if (index !== -1) {
+      individualTicket.push(item);
+    }
+  }
+  return individualTicket;
+};
+
+// Create individual tickets
+const person11Ticket = createIndividualTicket1(ticket0222.slice(), person11Consumption);
+const person22Ticket = createIndividualTicket1(ticket0222.slice(), person22Consumption);
+const person33Ticket = createIndividualTicket1(ticket0222.slice(), person33Consumption);
+
+console.log('Person 1 Ticket:', person11Ticket);
+console.log('Person 2 Ticket:', person22Ticket);
+console.log('Person 3 Ticket:', person33Ticket);
+console.log('Original ticket:', ticket0222);
+
+/*
+🗣️ 11 - ORDENANDO LOS TICKETS: 🗣️
+👨🏻‍🦰 - Camarero es su cumpleaños! Nos pones unas…
+🤵🏻‍♂️ - ¡Muchas felicidades marchando!
+👨🏻‍🦰👱🏽‍♂️ - Esa de allí! Hemos pedido cafés…
+🤵🏻‍♂️ - Un segundo que os busco los tickets!
+*/ 
+
+const drinksConsumed = [
+  { nombre: 'Alice', bebida: '🍹', hora: '18:30:00' },
+  { nombre: 'Bob', bebida: '🍷', hora: '19:15:00' },
+  { nombre: 'Charlie', bebida: '🍹', hora: '20:00:00' },
+  { nombre: 'Alice', bebida: '🍸', hora: '21:45:00' },
+  { nombre: 'Bob', bebida: '🥂', hora: '22:30:00' },
+  { nombre: 'Charlie', bebida: '🍵', hora: '23:15:00' },
+  { nombre: 'Alice', bebida: '🍹', hora: '03:30:00' },
+  { nombre: 'Bob', bebida: '🍺', hora: '04:15:00' },
+  { nombre: 'Charlie', bebida: '🍸', hora: '05:00:00' },
+];
+
+/*
+**TAREA 1**
+Queremos saber quién ha sido el primero/a en beberse un 🍹 y también una 🥂.
+ Para ello, usaremos **`indexOf()`**:
+*/
+
+function findFirstOccurrenceIndexAndPerson(array, targetDrink) {
+	// Find the first occurrence of targetDrink using indexOf
+	const firstOccurrenceIndex = array
+		.map((item) => item.bebida) //crea un aray de solo bebidas
+		.indexOf(targetDrink); //buscar indice
+
+	if (firstOccurrenceIndex !== -1) {
+		const personName = array[firstOccurrenceIndex].nombre;
+		console.log(
+			`First occurrence of ${targetDrink} found by ${personName} at index: ${firstOccurrenceIndex}`
+		);
+	} else {
+		console.log(`${targetDrink} not found in the array.`);
+	}
+}
+
+// Usage of the function with the drinksConsumed array and targetDrink '🍹'
+findFirstOccurrenceIndexAndPerson(drinksConsumed, "🍹");
+findFirstOccurrenceIndexAndPerson(drinksConsumed, "🥂");
+
+/*
+**TAREA 2**
+Queremos saber si alguien ha tomando un ☕. ¿Qué retornará el método en caso de no encontrar un resultado?
+ Para ello, usaremos **`indexOf()`**:
+*/
+
+function findFirstOccurrenceIndexAndPerson(array, targetDrink) {
+	// Find the first occurrence of targetDrink using indexOf
+	const firstOccurrenceIndex = array
+		.map((item) => item.bebida)
+		.indexOf(targetDrink);
+
+	if (firstOccurrenceIndex !== -1) {
+		const personName = array[firstOccurrenceIndex].nombre;
+		console.log(
+			`First occurrence of ${targetDrink} found by ${personName} at index: ${firstOccurrenceIndex}`
+		);
+	} else {
+		console.log(`${targetDrink} not found in the array.`);
+	}
+}
+
+// Usage of the function with the drinksConsumed array and targetDrink '🍹'
+findFirstOccurrenceIndexAndPerson(drinksConsumed, "🍹");
+findFirstOccurrenceIndexAndPerson(drinksConsumed, "🥂");
+
+/*
+Por último, queremos saber la última persona que ha bebido un 🍸. Para ello, usaremos lastIndexOf():
+*/
+
+function findFirstOccurrenceIndexAndPerson(array, targetDrink) {
+	// Find the first occurrence of targetDrink using indexOf
+	const firstOccurrenceIndex = array
+		.map((item) => item.bebida)
+		.indexOf(targetDrink);
+
+	if (firstOccurrenceIndex !== -1) {
+		const personName = array[firstOccurrenceIndex].nombre;
+		console.log(
+			`First occurrence of ${targetDrink} found by ${personName} at index: ${firstOccurrenceIndex}`
+		);
+	} else {
+		console.log(`${targetDrink} not found in the array.`);
+	}
+}
+
+// Usage of the function with the drinksConsumed array and targetDrink '🍹'
+findFirstOccurrenceIndexAndPerson(drinksConsumed, "🍹");
+findFirstOccurrenceIndexAndPerson(drinksConsumed, "🥂");
