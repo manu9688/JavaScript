@@ -4,8 +4,8 @@ nombre = "Manuela"; // inicialización de un valor
 let apellido = "Cardona Arias";
 const nie = "123456";
 console.log(nombre);
-console.log(typeof(nombre));
-const objeto = {name: "Manuela", apellidos: "Cardona Arias"};
+console.log(typeof (nombre));
+const objeto = { name: "Manuela", apellidos: "Cardona Arias" };
 console.table(objeto);
 //usando alert
 alert(nombre);
@@ -27,9 +27,9 @@ varTipoString = 'Esto es un String';
 varTipoNumber = 1;
 varTipoBoolean = true;
 varTipoNull = null;
-varTipoSymbol= Symbol('Esto es un Symbol');
-varTipoObject = [1,2,3];
-varTipoUndefined; 
+varTipoSymbol = Symbol('Esto es un Symbol');
+varTipoObject = [1, 2, 3];
+varTipoUndefined;
 
 //2. Imprimir por consola el valor que tiene la variable
 console.log(varTipoString);
@@ -41,20 +41,20 @@ console.table(varTipoObject);
 console.log(varTipoUndefined);
 
 //3. Imprimir por consola el tipo de dato que almacena
-console.log(typeof(varTipoString));
-console.log(typeof(varTipoNumber));
-console.log(typeof(varTipoBoolean));
-console.log(typeof(varTipoNull));
-console.log(typeof(varTipoSymbol));
-console.log(typeof(varTipoObject));
-console.log(typeof(varTipoUndefined));
+console.log(typeof (varTipoString));
+console.log(typeof (varTipoNumber));
+console.log(typeof (varTipoBoolean));
+console.log(typeof (varTipoNull));
+console.log(typeof (varTipoSymbol));
+console.log(typeof (varTipoObject));
+console.log(typeof (varTipoUndefined));
 
 //4.Declaracion de variable local y global
-var vglobal= "variable global";
+var vglobal = "variable global";
 
-function ejemplo(){
-    let vlocal="variable local";
-    console.log(vlocal);
+function ejemplo() {
+  let vlocal = "variable local";
+  console.log(vlocal);
 }
 ejemplo();
 console.log(vglobal);
@@ -72,12 +72,12 @@ function fArrow(){
     console.log(fArrow());
     */
 
-const nombreCompleto = (nombre) =>{
-return nombre;
+const nombreCompleto = (nombre) => {
+  return nombre;
 };
 console.log(nombreCompleto("Manuela Cardona A"));
 //llamada a la funcion para que se ejecute
-document.getElementById("print").textContent =nombreCompleto("Manuela Cardona Arias");
+document.getElementById("print").textContent = nombreCompleto("Manuela Cardona Arias");
 
 /* 2. Crea una función con nombre y sin return. Pásale un tipo de 
 dato boolean y dentro de la función imprime el valor que hemos 
@@ -99,28 +99,28 @@ ejBoolean(true);
 
 /*3. Crea una función que reciba parámetros infinitos, haz la llamada
 con los valores 1, 2, 3, 4, 5 y muestra dichos valores mediante un
-forEach.*/ 
+forEach.*/
 
-const pInfinitos = function (...datos){
-    let resultado = "Foreach = ";
-    datos.forEach(element => {
-   console.log(element);
-   resultado += `${element} `;
-    });
-     document.getElementById("foreach").textContent = resultado.trim();
+const pInfinitos = function (...datos) {
+  let resultado = "Foreach = ";
+  datos.forEach(element => {
+    console.log(element);
+    resultado += `${element} `;
+  });
+  document.getElementById("foreach").textContent = resultado.trim();
 }
 //llamada a la funcion para que se ejecute
-pInfinitos('1','2','3','4','5');
+pInfinitos('1', '2', '3', '4', '5');
 
 // ?EJERCICIO
 /*
 1. A partir de la pizza sustituías todos los elemento del array por
 cervezas:🍔🌯🍣🍕🍜🍱🍙🍘🥩*/
-let emojis = ['🍔','🌯','🍣','🍕','🍜','🍱','🍙','🍘','🥩'];
+let emojis = ['🍔', '🌯', '🍣', '🍕', '🍜', '🍱', '🍙', '🍘', '🥩'];
 
 // Desde el for recorro el array de emojis desde la posición 4
 for (let i = 4; i < emojis.length; i++) {
-  emojis[i] ='🍺'; // sustituyo por cerveza
+  emojis[i] = '🍺'; // sustituyo por cerveza
 }
 
 console.log(emojis); //muestro por consola el array
@@ -133,7 +133,7 @@ let pizza = ['🍕', '🍕', '🍍', '🍕', '🍕'];
 //dando su posición en caso contrario mostrara un -1
 let pineapple = pizza.indexOf('🍍');
 
-console.log("La piña esta en la posición: "+pineapple); 
+console.log("La piña esta en la posición: " + pineapple);
 
 /*3. Quita la piña del siguiente array. 🍕🍕🍍🍕🍕*/
 //creo el array
@@ -199,19 +199,18 @@ si el valor es 1 y "cruz" si el valor es 0.
  */
 
 
-function caraOcruz(){
+let caraOcruz = () => {
   let moneda = Math.round(Math.random());
   let resultado;
-  if( moneda == 1){
-   resultado = console.log("El resultado es: "+moneda+" Lo que es igual a Cara");
+  if (moneda == 1) {
+    resultado = console.log("El resultado es: " + moneda + "\nLo que es igual a Cara");
   } else {
-   resultado = console.log("El resultado es: "+moneda+" Lo que es igual a Cruz");
+    resultado = console.log("El resultado es: " + moneda + "\nLo que es igual a Cruz");
   }
-
   return resultado;
-}
+};
 //llamada a la función
- caraOcruz();
+caraOcruz();
 
 /*
 EJERCICIOS
@@ -220,31 +219,33 @@ EJERCICIOS
 - 2 Crea una función y escribe tu nombre completo en 3 parámetros: nombre, apellido1, apellido2, 
 concaténalos y finalmente muéstralos por pantalla.
 - 3 Crea una función que acepte dos números y devuelva el número mayor.
+*/
 
-*/ 
+//! 1.
+let sumaParm = (num1, num2, num3) => {
 
-
+};
 
 /*//? Ejercicios Switch
 EJERCICIO
 1. 	Realiza un  que muestre el mes del año cuando lo introduzcamos en formato numérico (1 al 12).
-2. 	Realiza un  en el que puedas introducir un número del uno al cinco en un string y 
+2. 	Realiza un  en el que puedas introducir un número del uno al cinco en un string y
 lo transforme a un número.
 
 */
 
 //? Ejercicios con Math
- /*
- EJERCICIO
+/*
+EJERCICIO
 1. 	Investiga cómo crear un número aleatorio (0 o 1) con el método  de .
 2. 	Investiga cómo redondear el valor de  (3,1415…) a la parte decimal 3.
- */
+*/
 
 //? Ejercicios con String
 /*
 EJERCICIO
 - Crea una función en la que, pasándole un string como parámetro, se sustituyan las letras A por las O.
-- Crea una función que compruebe si un string pasado como parámetro empieza por ‘aca’, y llama dos 
+- Crea una función que compruebe si un string pasado como parámetro empieza por ‘aca’, y llama dos
 veces a la función: una con "academia" y otra con "escuela".
 - Crea una función que, pasándole un "Hola", nos salude 3 veces utilizando métodos de Strings.
 */
