@@ -1,4 +1,4 @@
-/*1. **🗣️ LA COMANDA: 🗣️**
+/* 1. **🗣️ LA COMANDA: 🗣️**
 🧑🏽‍🧑🏻‍🧒**-** **¡Camarero! ¡Camarero! Nos pone por favor una 🍔, un 🌭 con dos** 🍟 **y dos 🧋 por favor.
 🤵🏻‍♂️ - ¡Por supuesto, lo tengo todo anotado!**
     
@@ -223,3 +223,91 @@ combinedTicket111.pop(); // Removes the last item in this case '🥙'
 combinedTicket111.shift(); // Removes the first item in this case '🍺'
 
 console.log(combinedTicket111);
+
+////////////////////////////////////// 
+/* 8. 🗣️ COMANDA RARUNA: 🗣️
+👨🏻‍🦰👱🏽‍♂️ - ¡CAMARERO! Quiero un batido de 🥛, 🍓, 🍌 …
+🤵🏻‍♂️ - ¿Cómo un batido? No hacemos batidos pero como hoy es mi primer día haré una excepción con usted.
+👨🏻‍🍳 - ¡CAMAREROOOOO! ¡BAMBINO! ¿Qué es esto? ¡Per la gloria de la mama!🤌🏻
+
+¡Coders 🆘AYUDA🆘! 
+👩🏻‍💻Coder👨🏻‍💻 - El cliente nos ha pedido un batido, algo raro ya que no los solemos hacer en el restaurante. 
+Para ello, tendremos que concatenar los ingredientes solicitados por el cliente utilizando el método join(). 
+Vamos a ello:
+*/ 
+
+const shake= ['🥛', '🍓', '🍌'];
+console.log(shake.join('+'));
+
+/*🗣️ ORDENANDO LOS TICKETS: 🗣️
+👨🏻‍🦰👱🏽‍♂️ 9- ¡CAMARERO! Quiero un batido de 🥛, 🍓, 🍌 …
+🤵🏻‍♂️ - ¿Cómo un batido? No hacemos batidos pero como hoy es mi primer día haré una excepción con usted.
+👨🏻‍🍳 - ¡CAMAREROOOOO! ¡BAMBINO! ¿Qué es esto? ¡Per la gloria de la mama!🤌🏻
+
+¡Coders 🆘AYUDA🆘!  
+👩🏻‍💻Coder👨🏻‍💻 - Estamos cerrando la tienda y necesitamos realizar un sort de los siguientes tickets:
+const tickets = [1, 100000, 21, 30, 4]
+
+Tenemos que ordenarlos de mayor a menor de las siguientes maneras:
+
+1. Utilizando el método **`sort()`**
+2. Con un **`bucle for`** sin utilizar métodos de programación funcional.
+3. Utilizando spread operator (los `…`)
+*/
+
+//? Utilizando For
+
+const numbers = [1, 100000, 21, 30, 4];
+
+// Function to perform Bubble Sort
+function bubbleSort(arr) {
+	const n = arr.length;
+
+	// Iterate through each element
+	for (let i = 0; i < n - 1; i++) {
+		// Iterate through remaining elements
+		for (let j = 0; j < n - i - 1; j++) {
+			// Compare adjacent elements and swap if necessary
+			if (arr[j] > arr[j + 1]) {
+				// Swap values using destructuring
+				[arr[j], arr[j + 1]] = [arr[j + 1], arr[j]];
+			}
+		}
+	}
+
+	return arr;
+}
+
+console.log(bubbleSort(numbers));
+
+
+//? Utilizando Sort 
+const numbers1 = [1, 100000, 21, 30, 4];
+console.log(numbers1.sort()); // ❌ Wrong orderned ❌
+const sortedNumbers = numbers1.sort((a, b) => a - b); // Ascending numerical sorting
+console.log(sortedNumbers);
+
+/* 10 🗣️ ORDENANDO LOS TICKETS: 🗣️
+👨🏻‍🦰👱🏽‍♂️ - Camarero la cuenta!
+🤵🏻‍♂️ - ¿De qué mesas  sois? 
+👨🏻‍🦰👱🏽‍♂️ - Esa de allí! Hemos pedido cafés…
+🤵🏻‍♂️ - Un segundo que os busco los tickets!
+
+👩🏻‍💻**Coder**👨🏻‍💻 
+
+**TAREA 1**
+
+Comprueba si en los dos tickets que tenemos tenemos 
+solo cafés con leche. Para ello utilizaremos el método **`every()`**. 
+Aquí tienes los dos arrays a comprobar:
+
+*/ 
+const ticket011 = ['☕', '☕', '☕'];
+const ticket022 = ['☕', '🥖', '☕', '🥯', '🍵', '🥐', '🥪'];
+// Check if every element in the array is equal to '☕'
+const ticket011Result = ticket011.every((element) => element === '☕'); //condicional que verifica si solo hay cafes
+console.log('Este ticket solo tiene cafes: '+ticket011Result);
+// Output: true (because every element is '☕')
+const ticket022Result = ticket022.every((element) => element === '☕');
+console.log('Este ticket solo tiene cafes: '+ticket022Result);
+// Output: false (because not every element is '☕')
