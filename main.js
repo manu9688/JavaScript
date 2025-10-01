@@ -223,16 +223,35 @@ concaténalos y finalmente muéstralos por pantalla.
 
 //! 1.
 let sumaParm = (num1, num2, num3) => {
-
+let suma = num1+num2+num3;
+return "La suma de los números es igual a : "+ suma;
 };
+document.getElementById("sumaP").textContent = sumaParm(1,2,3);
+console.log(sumaParm(1,2,3));
+
+//! 2.
+let concatenarNom = (nom, apell1, apell2) => {
+  return "Nombre: "+nom+"\nPrimer Apellido: "+apell1+"\nSegundo Apellido: "+apell2;
+};
+document.getElementById("concatenarN").textContent = concatenarNom("Manuela","Cardona","Arias");
+console.log(concatenarNom("Manuela","Cardona","Arias"));
+
+//! 3.
+let numMay = (num1,num2) => {
+  let result = Math.max(num1,num2);
+  return "El número Mayor es: "+result;
+}
+console.log(numMay(2,10));
 
 /*//? Ejercicios Switch
 EJERCICIO
-1. 	Realiza un  que muestre el mes del año cuando lo introduzcamos en formato numérico (1 al 12).
-2. 	Realiza un  en el que puedas introducir un número del uno al cinco en un string y
+1. 	Realiza un switch que muestre el mes del año cuando lo introduzcamos en formato numérico (1 al 12).
+2. 	Realiza un switch en el que puedas introducir un número del uno al cinco en un string y
 lo transforme a un número.
-
 */
+
+//! 1.
+
 
 //? Ejercicios con Math
 /*
