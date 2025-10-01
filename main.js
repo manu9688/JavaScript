@@ -189,7 +189,8 @@ for (let i = 0; i < cartas.length; i++) {
 }
 
 console.log(result);
-//+++++++++++Ejercicios con Condicionales IF++++++++++++++
+
+//?+++++++++++Ejercicios con Condicionales IF++++++++++++++
 /* 1- A partir de la siguiente instrucción que genera un número aleatorio:
 console.log(Math.round(Math.random()));
 que genera un número aleatorio 0 o 1.
@@ -198,25 +199,105 @@ si el valor es 1 y "cruz" si el valor es 0.
  */
 
 
+function caraOcruz(){
+  let moneda = Math.round(Math.random());
+  let resultado;
+  if( moneda == 1){
+   resultado = console.log("El resultado es: "+moneda+" Lo que es igual a Cara");
+  } else {
+   resultado = console.log("El resultado es: "+moneda+" Lo que es igual a Cruz");
+  }
 
-
+  return resultado;
+}
+//llamada a la función
+ caraOcruz();
 
 /*
 EJERCICIOS
-- Crea una función, pasa 3 números por parámetros, súmalos y devuelve el resultado mediante return.
+- 1 Crea una función, pasa 3 números por parámetros, súmalos y devuelve el resultado mediante return.
  Finalmente muéstralos por pantalla.
-- Crea una función y escribe tu nombre completo en 3 parámetros: nombre, apellido1, apellido2, 
+- 2 Crea una función y escribe tu nombre completo en 3 parámetros: nombre, apellido1, apellido2, 
 concaténalos y finalmente muéstralos por pantalla.
-- Crea una función que acepte dos números y devuelva el número mayor.
+- 3 Crea una función que acepte dos números y devuelva el número mayor.
 
 */ 
 
 
 
-/* Ejercicios Switch
+/*//? Ejercicios Switch
 EJERCICIO
 1. 	Realiza un  que muestre el mes del año cuando lo introduzcamos en formato numérico (1 al 12).
 2. 	Realiza un  en el que puedas introducir un número del uno al cinco en un string y 
 lo transforme a un número.
 
+*/
+
+//? Ejercicios con Math
+ /*
+ EJERCICIO
+1. 	Investiga cómo crear un número aleatorio (0 o 1) con el método  de .
+2. 	Investiga cómo redondear el valor de  (3,1415…) a la parte decimal 3.
+ */
+
+//? Ejercicios con String
+/*
+EJERCICIO
+- Crea una función en la que, pasándole un string como parámetro, se sustituyan las letras A por las O.
+- Crea una función que compruebe si un string pasado como parámetro empieza por ‘aca’, y llama dos 
+veces a la función: una con "academia" y otra con "escuela".
+- Crea una función que, pasándole un "Hola", nos salude 3 veces utilizando métodos de Strings.
+*/
+
+//? Ejercicios con bucles
+
+/*
+EJERCICIO
+Realiza un bucle tanto con FOR como con WHILE que impriman 10 veces:
+I❤code
+*/
+
+
+/*
+EJERCICIO
+- Define un array con las letras ‘a’, ‘b’, ‘c’, ‘d’ y ‘e’. Y, posteriormente, recorre cada uno de los
+ elementos mediante un forEach.
+- Define una variable let numero = 5; que itere hasta que el valor sea 0.
+
+*/
+
+/*
+EJERCICIO
+1. 	Analiza qué hace el siguiente programa, explica lo que hace:
+¿Cuántas iteraciones da?
+¿Cuándo entrará en el ?
+¿Y en el ?
+
+let numero = 1;
+let i = 0;
+do {
+    if(i == 0){
+        i++;
+        numero--;
+        console.log(numero);
+    } else{
+        numero++;
+        console.log(numero);
+    }
+    i++;
+} while (numero < 5);
+*/
+
+
+//? Arrays methods
+/*
+EJERCICIO
+- A partir de la pizza, sustituye todos los elementos del array por cervezas.
+- Encuentra si existe un elemento en el array que sea una piña.
+- Quita la piña del siguiente array.
+- A partir del siguiente array, convierte todas las fresas en... 
+(parece que falta el final de esta instrucción)
+- Añade el siguiente icono inmediatamente después del "cada" en el siguiente array. 
+(el icono no está especificado aquí)
+- Añade una carta comodín entre medio de dos cartas. Por ejemplo: en el siguiente array...
 */
