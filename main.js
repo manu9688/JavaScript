@@ -223,25 +223,25 @@ concaténalos y finalmente muéstralos por pantalla.
 
 //! 1.
 let sumaParm = (num1, num2, num3) => {
-let suma = num1+num2+num3;
-return "La suma de los números es igual a : "+ suma;
+  let suma = num1 + num2 + num3;
+  return "La suma de los números es igual a : " + suma;
 };
-document.getElementById("sumaP").textContent = sumaParm(1,2,3);
-console.log(sumaParm(1,2,3));
+document.getElementById("sumaP").textContent = sumaParm(1, 2, 3);
+console.log(sumaParm(1, 2, 3));
 
 //! 2.
 let concatenarNom = (nom, apell1, apell2) => {
-  return "Nombre: "+nom+"\nPrimer Apellido: "+apell1+"\nSegundo Apellido: "+apell2;
+  return "Nombre: " + nom + "\nPrimer Apellido: " + apell1 + "\nSegundo Apellido: " + apell2;
 };
-document.getElementById("concatenarN").textContent = concatenarNom("Manuela","Cardona","Arias");
-console.log(concatenarNom("Manuela","Cardona","Arias"));
+document.getElementById("concatenarN").textContent = concatenarNom("Manuela", "Cardona", "Arias");
+console.log(concatenarNom("Manuela", "Cardona", "Arias"));
 
 //! 3.
-let numMay = (num1,num2) => {
-  let result = Math.max(num1,num2);
-  return "El número Mayor es: "+result;
+let numMay = (num1, num2) => {
+  let result = Math.max(num1, num2);
+  return "El número Mayor es: " + result;
 }
-console.log(numMay(2,10));
+console.log(numMay(2, 10));
 
 /*//? Ejercicios Switch
 EJERCICIO
@@ -251,7 +251,48 @@ lo transforme a un número.
 */
 
 //! 1.
-
+let num = 12;
+switch (num) {
+  case 1:
+    console.log("El numero: " + num + " Corresponde a Enero");
+    break;
+  case 2:
+    console.log("El numero: " + num + " Corresponde a Febrero");
+    break;
+  case 3:
+    console.log("El numero: " + num + " Corresponde a Marzo");
+    break;
+  case 4:
+    console.log("El numero: " + num + " Corresponde a Abril");
+    break;
+  case 5:
+    console.log("El numero: " + num + " Corresponde a Mayo");
+    break;
+  case 6:
+    console.log("El numero: " + num + " Corresponde a Junio");
+    break;
+  case 7:
+    console.log("El numero: " + num + " Corresponde a Julio");
+    break;
+  case 8:
+    console.log("El numero: " + num + " Corresponde a Agosto");
+    break;
+  case 9:
+    console.log("El numero: " + num + " Corresponde a Septiembre");
+    break;
+  case 10:
+    console.log("El numero: " + num + " Corresponde a Octubre");
+    break;
+  case 11:
+    console.log("El numero: " + num + " Corresponde a Noviembre");
+    break;
+  case 12:
+    console.log("El numero: " + num + " Corresponde a Diciembre");
+    break;
+  default:
+    console.error("ERROR: El numero no esta en el rango de 1-12");
+    break;
+}
 
 //? Ejercicios con Math
 /*
