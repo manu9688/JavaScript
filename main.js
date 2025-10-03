@@ -301,19 +301,19 @@ let stringNum = "cinco";
 
 switch (stringNum) {
   case "uno": case "Uno":
-    return console.log(1);
+    console.log(1);
     break;
   case "dos": case "Dos":
-    return console.log(2);
+    console.log(2);
     break;
   case "tres": case "Tres":
-    return console.log(3);
+    console.log(3);
     break;
   case "cuatro": case "Cuatro":
-    return console.log(4);
+    console.log(4);
     break;
   case "cinco": case "Cinco":
-    return console.log(5);
+    console.log(5);
     break;
   default:
     console.error("ERROR: El numero no esta en el rango de 1-5");
