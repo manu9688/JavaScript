@@ -112,6 +112,7 @@ const pInfinitos = function (...datos) {
 //llamada a la funcion para que se ejecute
 pInfinitos('1', '2', '3', '4', '5');
 
+//! Arrays methods /////////////////////////////////////////////////////////////
 // ?EJERCICIO
 /*
 1. A partir de la pizza sustituías todos los elemento del array por
@@ -294,21 +295,108 @@ switch (num) {
     break;
 }
 
+//! 2.
+
+let stringNum = "cinco";
+
+switch (stringNum) {
+  case "uno": case "Uno":
+    return console.log(1);
+    break;
+  case "dos": case "Dos":
+    return console.log(2);
+    break;
+  case "tres": case "Tres":
+    return console.log(3);
+    break;
+  case "cuatro": case "Cuatro":
+    return console.log(4);
+    break;
+  case "cinco": case "Cinco":
+    return console.log(5);
+    break;
+  default:
+    console.error("ERROR: El numero no esta en el rango de 1-5");
+    break;
+}
+
 //? Ejercicios con Math
 /*
 EJERCICIO
-1. 	Investiga cómo crear un número aleatorio (0 o 1) con el método  de .
-2. 	Investiga cómo redondear el valor de  (3,1415…) a la parte decimal 3.
+1. 	Investiga cómo crear un número aleatorio (0 o 1) con el método  de Math.
+2. 	Investiga cómo redondear el valor de Math.PI (3,1415…) a la parte decimal 3.
 */
+
+//! 1.
+let numAleatorio = () =>{
+  /*- //? Math.random() 
+  genera un número decimal entre 0 (incluido) y 1 (excluido).
+- Al multiplicarlo por 2, obtenemos un rango entre 0 y casi 2.
+//? Math.floor() 
+redondea hacia abajo, así que el resultado será 0 o 1.
+  */
+return console.log(Math.floor(Math.random()*2));
+};
+numAleatorio();
+
+//! 2.
+//- Math.floor() siempre redondea hacia el entero inferior más cercano.
+// Usar Math.floor() → Redondeo hacia abajo
+
+const redondeado1 = Math.floor(Math.PI); // Resultado: 3
+console.log(redondeado1);
+/*- Math.round() redondea hacia arriba si la parte decimal es ≥ 0.5.
+- En el caso de Math.PI ≈ 3.1415, el resultado sigue siendo 3.
+. Usar Math.round() → Redondeo al entero más cercano
+*/
+const redondeado2 = Math.round(Math.PI); // Resultado: 3
+console.log(redondeado2);
+//Usar parseInt() → Conversión directa a entero
+//- Convierte el número a entero eliminando la parte decimal.
+const redondeado3 = parseInt(Math.PI); // Resultado: 3
+console.log(redondeado3);
+//Si quieres redondear a otros niveles de precisión (por ejemplo, a 3.14 o 3.1), 
+console.log(Math.PI.toFixed(3)); // "3.14" como string
+
 
 //? Ejercicios con String
 /*
 EJERCICIO
-- Crea una función en la que, pasándole un string como parámetro, se sustituyan las letras A por las O.
-- Crea una función que compruebe si un string pasado como parámetro empieza por ‘aca’, y llama dos
+1- Crea una función en la que, pasándole un string como parámetro, se sustituyan las letras A por las O.
+2- Crea una función que compruebe si un string pasado como parámetro empieza por ‘aca’, y llama dos
 veces a la función: una con "academia" y otra con "escuela".
-- Crea una función que, pasándole un "Hola", nos salude 3 veces utilizando métodos de Strings.
+3- Crea una función que, pasándole un "Hola", nos salude 3 veces utilizando métodos de Strings.
 */
+
+//! 1.
+/*
+- replace(/a/gi, "o") usa una expresión regular: //?esto se parce a regEX
+- /a/ busca la letra "a".
+- g significa "global", para que reemplace todas las ocurrencias.
+- i significa "insensible a mayúsculas", así que también cambia "A".
+
+*/
+let stringSust = (cadena) => {
+return console.log(cadena.replace(/a/gi,'o'));
+};
+stringSust('calabaza');
+
+//! 2.
+let empiezaAca = (texto) => {
+if(texto.startsWith('aca')==true){
+  return console.log('La palabra SI empieza con aca');
+} else{
+  return console.log('La palabra NO empieza con aca');
+}
+};
+empiezaAca('academia');
+empiezaAca('escuela');
+
+//! 3.
+let saludar3Veces = (texto) => {
+  return console.log((texto+"\n").repeat(3));
+};
+saludar3Veces('hola'); 
 
 //? Ejercicios con bucles
 
@@ -317,16 +405,38 @@ EJERCICIO
 Realiza un bucle tanto con FOR como con WHILE que impriman 10 veces:
 I❤code
 */
+//? usando For
+for (let i = 0; i < 10; i++) {
+  console.log("I ❤ code");
+}
+
+//? usando While
+let i = 0;
+while (i < 10) {
+  console.log("I ❤ code");
+  i++;
+}
 
 
 /*
 EJERCICIO
-- Define un array con las letras ‘a’, ‘b’, ‘c’, ‘d’ y ‘e’. Y, posteriormente, recorre cada uno de los
+1- Define un array con las letras ‘a’, ‘b’, ‘c’, ‘d’ y ‘e’. Y, posteriormente, recorre cada uno de los
  elementos mediante un forEach.
-- Define una variable let numero = 5; que itere hasta que el valor sea 0.
+2- Define una variable let numero = 5; que itere hasta que el valor sea 0.
 
 */
 
+//! 1.
+let letras = ['a','b','c','d','e'];
+letras.forEach(item => {
+console.log(item);
+});
+
+//! 2.
+let numero = 5;
+for (let numero = 5; numero > 0; numero--) {
+  console.log("Numero :", numero);
+}
 /*
 EJERCICIO
 1. 	Analiza qué hace el siguiente programa, explica lo que hace:
@@ -349,16 +459,18 @@ do {
 } while (numero < 5);
 */
 
+let nume = 1;
+let l = 0;
+do {
+    if(l == 0){ // la variable l=0 entra en el condicional IF
+        l++; //Incrementa su valor a 1
+        nume--;// la variable nume=1 ahora decrementa y nume=0
+        console.log(nume);//se imprime por consola el numero
+    } else{ // entra en el else cuando l > 0
+        nume++;// nume se incrementa a 1
+        console.log(nume); // se imprime por consola
+    }
+    l++; //se incrementa l
+} while (nume < 5); //esto se repite hasta que el nume sea igual a 5
 
-//? Arrays methods
-/*
-EJERCICIO
-- A partir de la pizza, sustituye todos los elementos del array por cervezas.
-- Encuentra si existe un elemento en el array que sea una piña.
-- Quita la piña del siguiente array.
-- A partir del siguiente array, convierte todas las fresas en... 
-(parece que falta el final de esta instrucción)
-- Añade el siguiente icono inmediatamente después del "cada" en el siguiente array. 
-(el icono no está especificado aquí)
-- Añade una carta comodín entre medio de dos cartas. Por ejemplo: en el siguiente array...
-*/
+
